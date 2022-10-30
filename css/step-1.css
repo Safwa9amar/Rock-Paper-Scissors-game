@@ -26,14 +26,22 @@
     padding: 1rem;
     margin: 0 auto;
     /*  */
-    position: absolute;
+
     height: var(--choise-h);
     width: var(--choise-w);
     cursor: pointer;
     /*  */
     transition: all .1s ease-in-out;
-    opacity: 0;
 
+
+}
+
+.absolute {
+    position: absolute;
+}
+
+.opacity-0 {
+    opacity: 0;
 }
 
 .chois-wrapper:hover {
@@ -51,30 +59,44 @@
 
 .scissors {
     background-image: var(--scissors-gradient);
-    animation: scissors .5s ease-in forwards;
 }
 
 .paper {
     background-image: var(--paper-gradient);
-    animation: paper .5s .3s ease-in forwards;
 }
 
 .rock {
     background-image: var(--rock-gradient);
-    animation: rock .5s .6s ease-in forwards;
 }
 
 .lizard {
     background-image: var(--lizard-gradient);
-    animation: lizard .5s .9s ease-in forwards;
 }
 
 .spock {
     background-image: var(--cyan-gradient);
-    animation: spock .5s 1.1s ease-in forwards;
 }
 
+.animated-scissors {
+    animation: scissors .5s ease-in forwards;
 
+}
+
+.animated-paper {
+    animation: paper .5s .3s ease-in forwards;
+}
+
+.animated-spock {
+    animation: rock .5s .6s ease-in forwards;
+}
+
+.animated-rock {
+    animation: lizard .5s .9s ease-in forwards;
+}
+
+.animated-lizard {
+    animation: spock .5s 1.1s ease-in forwards;
+}
 
 /*  media screen for mobile device  elemnet */
 @media screen and (max-width: 768px) {

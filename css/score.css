@@ -5,7 +5,7 @@
     padding: 1rem;
     color: white;
     text-transform: uppercase;
-    border: 1px solid var(--header-outline);
+    border: .2rem solid var(--header-outline);
     width: 50%;
     margin: 1rem auto;
     border-radius: 1rem;

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/score.css" />
     <link rel="stylesheet" href="./css/rules.css" />
     <link rel="stylesheet" href="./css/step-1.css" />
+    <link rel="stylesheet" href="./css/game.css" />
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
     <!-- Score
@@ -43,47 +44,54 @@
           <div class="score__number">12</div>
         </div>
       </div>
-
+      <!-- 
       <div class="setp-1">
-        <div class="chois-wrapper scissors">
-          <img src="./images/icon-scissors.svg" alt="" srcset="" />
+        <div class="chois-wrapper scissors opacity-0 absolute animated-scissors">
+          <img src="./images/icon-scissors.svg" alt="scissors" />
         </div>
-        <div class="chois-wrapper paper">
-          <img src="./images/icon-paper.svg" alt="" srcset="" />
+        <div class="chois-wrapper paper opacity-0 absolute animated-paper">
+          <img src="./images/icon-paper.svg" alt="paper" />
         </div>
-        <div class="chois-wrapper spock">
-          <img src="./images/icon-spock.svg" alt="" srcset="" />
+        <div class="chois-wrapper spock opacity-0 absolute animated-spock">
+          <img src="./images/icon-spock.svg" alt="spock" />
         </div>
-        <div class="chois-wrapper rock">
-          <img src="./images/icon-rock.svg" alt="" srcset="" />
+        <div class="chois-wrapper rock opacity-0 absolute animated-rock">
+          <img src="./images/icon-rock.svg" alt="rock" />
         </div>
-        <div class="chois-wrapper lizard">
-          <img src="./images/icon-lizard.svg" alt="" srcset="" />
+        <div class="chois-wrapper lizard opacity-0 absolute animated-lizard">
+          <img src="./images/icon-lizard.svg" alt="lizard" />
         </div>
-      </div>
-
-      <!-- <div class="game">
-        <div class="game__title">You Picked</div>
-        <div class="game__choice">
-          <div class="game__choice-item">
-            <img src="./images/icon-rock.svg" alt="Rock" />
+      </div> -->
+      <div class="game-wrapper">
+        <div class="game">
+          <div class="game__title">You Picked</div>
+          <div class="game__choice">
+            <div class="chois-wrapper lizard">
+              <img src="./images/icon-lizard.svg" alt="" srcset="" />
+            </div>
+          </div>
+        </div>
+        <div class="result md">
+          <div class="result__title">You Win</div>
+          <div class="result__button">
+            <button>Play Again</button>
+          </div>
+        </div>
+        <div class="game">
+          <div class="game__title">The House Picked</div>
+          <div class="game__choice winner">
+            <div class="chois-wrapper rock">
+              <img src="./images/icon-rock.svg" alt="rock" />
+            </div>
           </div>
         </div>
       </div>
-      <div class="game">
-        <div class="game__title">The House Picked</div>
-        <div class="game__choice">
-          <div class="game__choice-item">
-            <img src="./images/icon-paper.svg" alt="Paper" />
-          </div>
-        </div>
-      </div>
-      <div class="result">
+      <div class="result sm">
         <div class="result__title">You Win</div>
         <div class="result__button">
           <button>Play Again</button>
         </div>
-      </div> -->
+      </div>
       <button class="rules-btn">rules</button>
       <div class="rules-wrapper">
         <div class="rules">

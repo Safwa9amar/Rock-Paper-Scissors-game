@@ -1,0 +1,122 @@
+:root {
+    --shadow-winner: 20px;
+}
+
+.game-wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.game {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.game__choice {
+    display: flex;
+    place-items: center;
+    width: calc(var(--choise-w) + 50px);
+    height: calc(var(--choise-h) + 50px);
+    background: rgba(0, 0, 0, 0.205);
+    border-radius: 50%;
+    position: relative;
+}
+
+.winner {
+    border-radius: 50%;
+    animation: box-shadow 2s alternate infinite ease-in;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.sm {
+    display: none;
+
+}
+
+.result__title {
+    font-size: 3rem;
+    color: white;
+}
+
+.result__button button {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all .1s cubic-bezier(0.57, -0.3, 0.74, 0.05);
+}
+
+/* generate media query for small devices */
+@media screen and (max-width: 768px) {
+    .game-wrapper {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .game__title {
+        font-size: 1.2rem;
+    }
+
+    .md {
+        display: none;
+    }
+
+    .sm {
+        display: flex;
+    }
+
+    .result__title {
+        font-size: 1.5rem;
+    }
+
+    .result__button button {
+        padding: .5rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+
+/* create box shado keyfames */
+@keyframes box-shadow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.027),
+            0 0 0 0 rgba(255, 255, 255, 0.027),
+            0 0 0 0 rgba(255, 255, 255, 0.027),
+            0 0 0 0 rgba(255, 255, 255, 0.027);
+    }
+
+    100% {
+        box-shadow: 0 0 0 var(--shadow-winner) rgba(255, 255, 255, 0.027),
+            0 0 0 calc(var(--shadow-winner) + 20px) rgba(255, 255, 255, 0.027),
+            0 0 0 calc(var(--shadow-winner) + 40px) rgba(255, 255, 255, 0.027),
+            0 0 0 calc(var(--shadow-winner) + 60px) rgba(255, 255, 255, 0.027);
+    }
+}
