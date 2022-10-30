@@ -1,0 +1,73 @@
+.rules-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 1;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.rules {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1rem;
+    border-radius: 1rem;
+    background-color: #eee;
+    min-width: 20%;
+    min-height: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-text);
+}
+
+.rules__title {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.close-rules {
+    cursor: pointer;
+}
+
+.rules-btn {
+    cursor: pointer;
+    padding: .5rem;
+    border-radius: .5rem;
+    border: 1px solid var(--header-outline);
+    background-color: transparent;
+    color: white;
+    /* font-size: 1.5rem; */
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 2rem auto;
+    width: fit-content;
+}
+
+/* set media queries for rules in small devices */
+@media screen and (max-width: 768px) {
+    .rules-wrapper {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .rules {
+        width: 100%;
+        height: 100%;
+    }
+}

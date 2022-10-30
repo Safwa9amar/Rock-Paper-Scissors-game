@@ -1,0 +1,179 @@
+/* creata css var */
+:root {
+    --pentagon-w: 400px;
+    --pentagon-h: 413px;
+    --choise-w: 100px;
+    --choise-h: 100px;
+}
+
+.setp-1 {
+    background-image: url('../images/bg-pentagon.svg');
+    background-size: var(--pentagon-w) var(--pentagon-h);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: var(--pentagon-w);
+    height: var(--pentagon-h);
+    margin: 0 auto;
+    position: relative;
+}
+
+/* get game choises */
+.chois-wrapper {
+    display: flex;
+    justify-content: center;
+    /*  */
+    border-radius: 50%;
+    padding: 1rem;
+    margin: 0 auto;
+    /*  */
+    position: absolute;
+    height: var(--choise-h);
+    width: var(--choise-w);
+    cursor: pointer;
+    /*  */
+    transition: all .1s ease-in-out;
+    opacity: 0;
+
+}
+
+.chois-wrapper:hover {
+    box-shadow: 0 0 10px .2rem rgba(255, 226, 120, 0.5);
+
+}
+
+.chois-wrapper img {
+    background-color: #eee;
+    border-radius: 50%;
+    padding: 1.2rem;
+    width: 100%;
+    box-shadow: 0 2px 1px .2rem var(--header-outline) inset;
+}
+
+.scissors {
+    background-image: var(--scissors-gradient);
+    animation: scissors .5s ease-in forwards;
+}
+
+.paper {
+    background-image: var(--paper-gradient);
+    animation: paper .5s .3s ease-in forwards;
+}
+
+.rock {
+    background-image: var(--rock-gradient);
+    animation: rock .5s .6s ease-in forwards;
+}
+
+.lizard {
+    background-image: var(--lizard-gradient);
+    animation: lizard .5s .9s ease-in forwards;
+}
+
+.spock {
+    background-image: var(--cyan-gradient);
+    animation: spock .5s 1.1s ease-in forwards;
+}
+
+
+
+/*  media screen for mobile device  elemnet */
+@media screen and (max-width: 768px) {
+
+    :root {
+        --pentagon-w: 250px;
+        --pentagon-h: 263px;
+    }
+
+    .chois-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(var(--choise-w) / 2);
+        height: calc(var(--choise-h) / 2);
+    }
+
+    .chois-wrapper img {
+        width: 40px;
+        height: 40px;
+
+    }
+}
+
+
+/* create back to inset animation */
+@keyframes scissors {
+    0% {
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        opacity: 1;
+        top: calc(90% - var(--pentagon-h));
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes paper {
+    0% {
+        opacity: 0;
+        top: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+
+    100% {
+        opacity: 1;
+        top: calc(120% - var(--pentagon-h));
+        right: calc(var(--pentagon-w) - 115%);
+    }
+}
+
+@keyframes spock {
+    0% {
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        opacity: 1;
+        top: calc(120% - var(--pentagon-h));
+        left: calc(var(--pentagon-w) - 115%);
+    }
+}
+
+@keyframes rock {
+    0% {
+        opacity: 0;
+        top: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        opacity: 1;
+        top: calc(var(--pentagon-h) - 20%);
+        right: calc(var(--pentagon-w) - 95%);
+    }
+}
+
+@keyframes lizard {
+    0% {
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        opacity: 1;
+        top: calc(var(--pentagon-h) - 20%);
+        left: calc(var(--pentagon-w) - 95%);
+    }
+}

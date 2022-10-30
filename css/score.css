@@ -1,0 +1,59 @@
+.score-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 1rem;
+    color: white;
+    text-transform: uppercase;
+    border: 1px solid var(--header-outline);
+    width: 50%;
+    margin: 1rem auto;
+    border-radius: 1rem;
+
+}
+
+.choises {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.score {
+    text-align: center;
+    padding-block: 1rem;
+    padding-inline: .5rem;
+    border-radius: .5rem;
+    width: 10%;
+    background-color: #eee;
+}
+
+.score__title {
+    color: var(--score-text);
+}
+
+.score__number {
+    color: var(--dark-text);
+    font-size: 3.5rem;
+}
+
+/*  set media queries for score in small devices */
+@media screen and (max-width: 768px) {
+    .score-wrapper {
+        width: 80%;
+    }
+
+    .score {
+        width: 50%;
+
+    }
+
+    .score__number {
+        font-size: 2.5rem;
+    }
+
+    .choises {
+        width: 100%;
+        padding: 0;
+    }
+}
