@@ -6,7 +6,7 @@
     --choise-h: 100px;
 }
 
-.setp-1 {
+.step-one {
     background-image: url('../images/bg-pentagon.svg');
     background-size: var(--pentagon-w) var(--pentagon-h);
     background-repeat: no-repeat;
@@ -15,6 +15,13 @@
     height: var(--pentagon-h);
     margin: 0 auto;
     position: relative;
+}
+
+.step-one-active {}
+
+.step-one-hidden {
+    display: none;
+    transition: all 1s ease-in-out;
 }
 
 /* get game choises */
@@ -33,8 +40,13 @@
     /*  */
     transition: all .1s ease-in-out;
 
-
 }
+
+.chois-wrapper>*,
+.selected {
+    pointer-events: none;
+}
+
 
 .absolute {
     position: absolute;
@@ -86,15 +98,15 @@
     animation: paper .5s .3s ease-in forwards;
 }
 
-.animated-spock {
+.animated-rock {
     animation: rock .5s .6s ease-in forwards;
 }
 
-.animated-rock {
+.animated-lizard {
     animation: lizard .5s .9s ease-in forwards;
 }
 
-.animated-lizard {
+.animated-spock {
     animation: spock .5s 1.1s ease-in forwards;
 }
 

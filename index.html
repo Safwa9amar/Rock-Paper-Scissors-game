@@ -41,35 +41,47 @@
         </div>
         <div class="score">
           <div class="score__title">Score</div>
-          <div class="score__number">12</div>
+          <div class="score__number" id="player_score">0</div>
         </div>
       </div>
-      <!-- 
-      <div class="setp-1">
-        <div class="chois-wrapper scissors opacity-0 absolute animated-scissors">
+
+      <div class="step-one">
+        <div
+          choise-name="scissors"
+          class="chois-wrapper scissors opacity-0 absolute animated-scissors"
+        >
           <img src="./images/icon-scissors.svg" alt="scissors" />
         </div>
-        <div class="chois-wrapper paper opacity-0 absolute animated-paper">
+        <div
+          choise-name="paper"
+          class="chois-wrapper paper opacity-0 absolute animated-paper"
+        >
           <img src="./images/icon-paper.svg" alt="paper" />
         </div>
-        <div class="chois-wrapper spock opacity-0 absolute animated-spock">
-          <img src="./images/icon-spock.svg" alt="spock" />
-        </div>
-        <div class="chois-wrapper rock opacity-0 absolute animated-rock">
+        <div
+          choise-name="rock"
+          class="chois-wrapper rock opacity-0 absolute animated-rock"
+        >
           <img src="./images/icon-rock.svg" alt="rock" />
         </div>
-        <div class="chois-wrapper lizard opacity-0 absolute animated-lizard">
+
+        <div
+          choise-name="lizard"
+          class="chois-wrapper lizard opacity-0 absolute animated-lizard"
+        >
           <img src="./images/icon-lizard.svg" alt="lizard" />
         </div>
-      </div> -->
+        <div
+          choise-name="spock"
+          class="chois-wrapper spock opacity-0 absolute animated-spock"
+        >
+          <img src="./images/icon-spock.svg" alt="spock" />
+        </div>
+      </div>
       <div class="game-wrapper">
         <div class="game">
           <div class="game__title">You Picked</div>
-          <div class="game__choice">
-            <div class="chois-wrapper lizard">
-              <img src="./images/icon-lizard.svg" alt="" srcset="" />
-            </div>
-          </div>
+          <div id="player_one_area" class="game__choice"></div>
         </div>
         <div class="result md">
           <div class="result__title">You Win</div>
@@ -79,11 +91,7 @@
         </div>
         <div class="game">
           <div class="game__title">The House Picked</div>
-          <div class="game__choice winner">
-            <div class="chois-wrapper rock">
-              <img src="./images/icon-rock.svg" alt="rock" />
-            </div>
-          </div>
+          <div id="player_two_area" class="game__choice "></div>
         </div>
       </div>
       <div class="result sm">
@@ -103,20 +111,25 @@
           </div>
           <div class="rules__list">
             <img src="./images/image-rules-bonus.svg" alt="" />
+            <div class="attribution">
+              Challenge by
+              <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+              >. Coded by
+              <a href="https://www.frontendmentor.io?profile=Safwa9amar"
+                >hamza safwan</a
+              >.
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by
-      <a href="https://www.frontendmentor.io?profile=Safwa9amar">hamza safwan</a
-      >.
-    </div> -->
   </body>
   <!-- import ui.js from js folder -->
   <script src="./js/ui.js"></script>
+
+  <!-- import game.js from js folder -->
+  <script src="./js/game.js"></script>
 </html>

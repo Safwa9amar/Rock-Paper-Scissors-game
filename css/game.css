@@ -4,10 +4,14 @@
 
 .game-wrapper {
     width: 50%;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
 
+}
+
+.game-wrapper_active {
+    display: flex;
 }
 
 .game {
@@ -46,7 +50,16 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s ease-in-out;
 
+
+}
+
+.result_active {
+    visibility: visible;
+    opacity: 1;
 }
 
 .sm {
@@ -83,6 +96,11 @@
 
     .game__title {
         font-size: 1.2rem;
+    }
+
+    .game__choice {
+        width: var(--choise-w);
+        height: var(--choise-h);
     }
 
     .md {
