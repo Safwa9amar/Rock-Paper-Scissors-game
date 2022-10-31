@@ -19,6 +19,7 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    gap: 20px;
 }
 
 .game__title {
@@ -53,7 +54,8 @@
     visibility: hidden;
     opacity: 0;
     transition: all 1s ease-in-out;
-
+    position: relative;
+    padding: 2rem;
 
 }
 
@@ -67,12 +69,18 @@
 
 }
 
+.md {
+    height: 100%;
+    width: 100%;
+}
+
 .result__title {
     font-size: 3rem;
     color: white;
+    text-shadow: 5px 3px 5px rgba(255, 226, 120, 0.5);
 }
 
-.result__button button {
+.result__button {
     margin-top: 1rem;
     padding: 1rem 2rem;
     background: white;
@@ -87,6 +95,16 @@
     transition: all .1s cubic-bezier(0.57, -0.3, 0.74, 0.05);
 }
 
+.winVideo {
+    width: 100%;
+    height: 100%;
+    /* bg path clik star shape */
+    /* clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); */
+    position: absolute;
+    z-index: -1;
+    border-radius: 40%;
+}
+
 /* generate media query for small devices */
 @media screen and (max-width: 768px) {
     .game-wrapper {
@@ -94,8 +112,12 @@
         justify-content: space-evenly;
     }
 
+    .game {
+        flex-direction: column-reverse
+    }
+
     .game__title {
-        font-size: 1.2rem;
+        font-size: .6rem;
     }
 
     .game__choice {
@@ -108,7 +130,9 @@
     }
 
     .sm {
-        display: flex;
+        display: block;
+        /* height: 100%; */
+        width: 100%;
     }
 
     .result__title {
@@ -118,6 +142,10 @@
     .result__button button {
         padding: .5rem 1rem;
         font-size: 1rem;
+    }
+
+    .winVideo {
+        width: 70%;
     }
 }
 

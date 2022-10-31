@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  if (!localStorage.getItem("score")) {
-    localStorage.setItem("score", 0);
+  if (!sessionStorage.getItem("score")) {
+    sessionStorage.setItem("score", 0);
   }
   const playerScore = document.querySelector("#player_score");
-  playerScore.innerHTML = localStorage.getItem("score");
+  playerScore.innerHTML = sessionStorage.getItem("score");
 
   let rules = gameRules();
 
@@ -28,8 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         // add computer choise to player two area
         playerTwoArea.innerHTML = computerHtml;
+      }, 500);
+
+      setTimeout(() => {
         //   show result
-        result(winner);
+        if (result(winner)) {
+          // get result__button
+          const result__button = document.querySelectorAll(".result__button");
+          result__button.forEach((button) => {
+            button.addEventListener("click", (e) => {
+              window.location.reload();
+            });
+          });
+        }
         // update score
 
         updateScore(winner);
@@ -44,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
           playeOneArea.classList.add("draw");
           playerTwoArea.classList.add("draw");
         }
-      }, 1000);
+      }, 1500);
     });
   });
 });
@@ -80,32 +91,67 @@ function pickWinner(playerChois, computerChois, rules) {
 }
 
 function result(winner) {
-  const result = document.querySelector(".result");
-  const result__title = document.querySelector(".result__title");
-  const result__button = document.querySelector(".result__button");
+  let resWrapper = document.querySelector(".sm");
+  let resWrapper1 = document.querySelector(".md");
+  let result = document.createElement("div");
+  let result__title = document.createElement("h2");
+  let result__button = document.createElement("button");
+  result.classList.add("result");
   result.classList.add("result_active");
+  result__title.classList.add("result__title");
+  result__button.classList.add("result__button");
+  result__button.innerHTML = "Play Again";
+
   if (winner === "player") {
     result__title.innerHTML = "You Win";
+    winnerPlaySound();
+    result.appendChild(playerWinVideo());
   } else if (winner === "computer") {
     result__title.innerHTML = "You Lose";
+    loserPlaySound();
   } else {
     result__title.innerHTML = "Draw";
   }
+  result.appendChild(result__title);
+  result.appendChild(result__button);
+  resWrapper.innerHTML = result.outerHTML;
+  resWrapper1.innerHTML = result.outerHTML;
+  return true;
+}
+// create winner play sound function
+function winnerPlaySound() {
+  const audio = new Audio("./sounds/winner.wav");
+  audio.play();
+}
+// create loser play sound function
+function loserPlaySound() {
+  const audio = new Audio("./sounds/loser.wav");
+  audio.play();
 }
 
+// create win function and import vid from video folder
+function playerWinVideo() {
+  let win = document.createElement("video");
+  win.classList.add("winVideo");
+  win.setAttribute("src", "./vid/win.mp4");
+  win.setAttribute("autoplay", "true");
+  win.setAttribute("loop", "true");
+  win.setAttribute("muted", "true");
+  return win;
+}
 // update score function
 function updateScore(winner) {
   const playerScore = document.querySelector("#player_score");
   // create loval storage for player score
-  let score = JSON.parse(localStorage.getItem("score"));
+  let score = JSON.parse(sessionStorage.getItem("score"));
 
   // const computerScore = document.querySelector("#computer_score");
   if (winner === "player") {
     playerScore.innerHTML = parseInt(score) + 1;
-    localStorage.setItem("score", parseInt(score) + 1);
+    sessionStorage.setItem("score", parseInt(score) + 1);
   } else if (winner === "computer") {
     playerScore.innerHTML = parseInt(score) - 1;
-    localStorage.setItem("score", parseInt(score) - 1);
+    sessionStorage.setItem("score", parseInt(score) - 1);
   }
 }
 // game rules function
